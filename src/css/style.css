@@ -1,0 +1,3 @@
+.card-list{display: flex; flex-wrap: nowrap; padding:10px; width: 1300px; overflow: auto;}
+.text-muted{display: inline-block; position: absolute; bottom:10px;}
+.App{ overflow: hidden; overflow-x: auto;}
