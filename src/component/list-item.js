@@ -11,7 +11,7 @@ class ListItem extends React.Component {
         }
         return (
 
-                        <Card key={this.props.index} style={{width: '18rem', borderRadius: '1.2rem', overflow: 'hidden', boxShadow: '0 5px #ccc', margin:'10px'}}>
+                        <Card key={this.props.index} style={{minWidth: '230px', width: '230px', height: '320px', borderRadius: '1.2rem', overflow: 'hidden', boxShadow: '0 5px #ccc', margin:'10px'}}>
                             <Link to={link} >
                                 <Card.Img variant="top" title="커리큘럼 이미지" src={data.img}/>
                                 <Card.Body>
