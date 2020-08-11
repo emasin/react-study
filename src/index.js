@@ -6,7 +6,7 @@ import thunk from "redux-thunk";
 import reducers from "./reducers/index.js";
 import { BrowserRouter } from 'react-router-dom';
 import Content from './container/content-container.js';
-import Detail from './component/detail.js';
+import Detail from './component/Detail.js';
 
 import { Route } from 'react-router-dom';
 import 'bootstrap/dist/css/bootstrap.min.css';

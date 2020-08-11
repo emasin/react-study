@@ -10,9 +10,9 @@ class ListItem extends React.Component {
 
         }
         return (
-                    <Link to={link} >
-                        <Card key={this.props.index} style={{width: '18rem', borderRadius: '1.2rem', overflow: 'hidden', boxShadow: '0 5px #ccc', margin:'10px'}}>
 
+                        <Card key={this.props.index} style={{width: '18rem', borderRadius: '1.2rem', overflow: 'hidden', boxShadow: '0 5px #ccc', margin:'10px'}}>
+                            <Link to={link} >
                                 <Card.Img variant="top" title="커리큘럼 이미지" src={data.img}/>
                                 <Card.Body>
                                     <Card.Title>{data.title}</Card.Title>
@@ -21,9 +21,9 @@ class ListItem extends React.Component {
                                         <small className="text-muted">{data.smtxt}</small>
                                     </Card.Text>
                                 </Card.Body>
-
+                            </Link>
                         </Card>
-                    </Link>
+
 
         )
     }
