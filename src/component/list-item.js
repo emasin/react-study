@@ -7,7 +7,6 @@ class ListItem extends React.Component {
         const data = this.props.data;
         const link  = '/detail/' + this.props.index;
         function goDetail(){
-
         }
         return (
 
