@@ -2,7 +2,7 @@ import axios from "axios";
 
 export function loadColor(){
     return(dispatch)=>{
-        return axios.get("http://www.colr.org/json/color/random").then((response)=>{
+        return axios.get("https://www.colr.org/json/color/random").then((response)=>{
             dispatch(changeColor("#"+response.data.new_color));
         })
     }
@@ -17,7 +17,7 @@ export function changeColor(color){
 
 export  function loadContent(){
     return(dispatch)=>{
-        return axios.get("http://www.devkids.co.kr/data.json").then((response)=>{
+        return axios.get("https://app.devkids.co.kr/data/data.json").then((response)=>{
             dispatch(changeContent(response.data));
         })
     }

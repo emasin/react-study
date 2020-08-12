@@ -19,7 +19,7 @@ class Detail extends React.Component {
                     <div
                         className="MuiGrid-root jss2 MuiGrid-item MuiGrid-grid-xs-12 MuiGrid-grid-sm-6 MuiGrid-grid-md-5">
                         <div className="btn-all">
-                            <Link to="/">
+                            <Link to="/courses">
                                 <svg className="MuiSvgIcon-root" focusable="false" viewBox="0 0 24 24"
                                      aria-hidden="true" role="presentation">
                                     <path d="M15.41 16.59L10.83 12l4.58-4.59L14 6l-6 6 6 6 1.41-1.41z"></path>

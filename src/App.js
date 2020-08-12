@@ -2,14 +2,16 @@ import React from 'react';
 import logo from './logo.svg';
 import './App.css';
 import { Button, ButtonToolbar } from 'react-bootstrap';
-
+import {Link, Route } from 'react-router-dom';
+import Content from './container/content-container.js';
+import Detail from "./component/Detail";
 function App() {
   return (
     <div className="App">
-     <ButtonToolbar>
-       <Button variant="primary">Primary</Button>
-         <Button variant="secondary">Secondary</Button>
-     </ButtonToolbar>
+
+        <Route  exact path="/" component={Content} />
+        <Route  path="/courses" component={Content} />
+        <Route path="/detail/:name" component={Detail} />
     </div>
   );
 }
