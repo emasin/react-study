@@ -8,10 +8,13 @@ import Detail from "./component/Detail";
 function App() {
   return (
     <div className="App">
-
-        <Route  exact path="/" component={Content} />
+        <Link to="/courses">강의목록</Link>
+        <Link to="/detail/1">상세 테스트1</Link>
+        <Link to="/react/detail/2">상세 테스트2</Link>
+        <Route  exact path="/react/" component={Content} />
         <Route  path="/courses" component={Content} />
         <Route path="/detail/:name" component={Detail} />
+        <Route path="/react/detail/:name" component={Detail} />
     </div>
   );
 }
