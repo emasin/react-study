@@ -4,8 +4,18 @@ import * as actionCreators from "../actions";
 import { Link, Route } from 'react-router-dom';
 import './Detail.css';
 class Detail extends React.Component {
+    constructor(props) {
+        super(props);
+
+        this.showContent =  this.showContent.bind(this);
+    }
     componentDidMount() {
         this.props.loadContentDetail(this.props.match.params.name);
+    }
+    showContent(i) {
+        if(window.flutter_inappwebview) {
+            window.flutter_inappwebview.callHandler('popAd', {uid: 'emasin'});
+        }
     }
 
     render() {
@@ -106,8 +116,10 @@ class Detail extends React.Component {
                                             <h6 className="MuiTypography-root MuiTypography-subtitle1 MuiTypography-colorTextSecondary">1</h6>
                                         </div>
                                         <div className="MuiListItemText-root">
-                                            <h6 className="MuiTypography-root MuiTypography-subtitle1 MuiTypography-colorTextSecondary">Foods
-                                                You Love</h6>
+                                            <h6 className="MuiTypography-root MuiTypography-subtitle1 MuiTypography-colorTextSecondary">
+                                                <a href="#" onClick={this.showContent.bind(this,1)}> Foods
+                                                You Love</a>
+                                            </h6>
                                         </div>
                                         <div className="MuiListItemIcon-root"></div>
                                     </li>
