@@ -35,7 +35,7 @@ export function changeContent(data){
 
 export  function loadContentDetail(key){
     return(dispatch)=>{
-        return axios.get("https://app.devkids.co.kr/data.json").then((response)=>{
+        return axios.get("https://app.devkids.co.kr/data/data.json").then((response)=>{
             console.log(response.data[key]);
             dispatch(changeContentDetail(response.data[key]));
         })
