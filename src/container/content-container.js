@@ -13,7 +13,6 @@ class ContentContainer extends React.Component {
     }
 
     render() {
-
         const {data, loadContent} = this.props;
         return (
             <>
@@ -27,10 +26,20 @@ class ContentContainer extends React.Component {
 const mapStateToProps = (state) => {
 
     return {
-        data: state.data,
-        loadContent: state.loadContent
+        data: state.data
     };
 
 };
 
-export default connect(mapStateToProps, actionCreators)(ContentContainer);
+
+const mapDispatchToProps = (dispatch) => {
+    return {
+        loadContent(){
+            dispatch(actionCreators.loadContent()) // 액션 메서드
+        }
+    }
+}
+
+
+
+export default connect(mapStateToProps, mapDispatchToProps)(ContentContainer);
