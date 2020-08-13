@@ -1,8 +1,8 @@
 import React from 'react';
 import {connect} from "react-redux";
 import * as actionCreators from "../actions/index.js"
-
 import List from "../component/list";
+import Tutor from "../component/tutor";
 import '../css/style.css'
 
 
@@ -18,6 +18,7 @@ class ContentContainer extends React.Component {
         return (
             <>
                 <List data={data}></List>
+                <Tutor data={data}></Tutor>
             </>
         )
     }
