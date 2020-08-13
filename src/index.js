@@ -10,6 +10,7 @@ import Content from './container/content-container.js';
 import Detail from './component/Detail.js';
 
 import { Route } from 'react-router-dom';
+import './index.css';
 import 'bootstrap/dist/css/bootstrap.min.css';
 
 

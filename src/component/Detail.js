@@ -8,11 +8,20 @@ class Detail extends React.Component {
         super(props);
 
         this.showContent =  this.showContent.bind(this);
+        this.showAd =  this.showAd.bind(this);
+
     }
     componentDidMount() {
         this.props.loadContentDetail(this.props.match.params.name);
     }
-    showContent(i) {
+    showContent(url) {
+
+        if(window.flutter_inappwebview) {
+            window.flutter_inappwebview.callHandler('goto', url);
+        }
+    }
+
+    showAd() {
         if(window.flutter_inappwebview) {
             window.flutter_inappwebview.callHandler('popAd', {uid: 'emasin'});
         }
@@ -24,7 +33,7 @@ class Detail extends React.Component {
 
 
         return (
-            <div className="App">
+            <div className="">
                 <div className="MuiGrid-root jss1 MuiGrid-container MuiGrid-spacing-xs-4 MuiGrid-justify-xs-center">
                     <div
                         className="MuiGrid-root jss2 MuiGrid-item MuiGrid-grid-xs-12 MuiGrid-grid-sm-6 MuiGrid-grid-md-5">
@@ -57,10 +66,10 @@ class Detail extends React.Component {
                                 <div>
                                     <p className="MuiTypography-root MuiTypography-body2 MuiTypography-colorTextSecondary"></p>
                                     <div>
-                                        <button
+                                        <button onClick={this.showAd.bind(this)}
                                             className="MuiButtonBase-root MuiButton-root MuiButton-contained MuiButton-containedSecondary MuiButton-sizeLarge MuiButton-fullWidth"
                                             tabIndex="0" type="button">
-                                            <span className="MuiButton-label">과정 시작</span>
+                                            <span className="MuiButton-label">광고 보기</span>
                                             <span className="MuiTouchRipple-root"></span>
                                         </button>
                                     </div>
@@ -117,8 +126,7 @@ class Detail extends React.Component {
                                         </div>
                                         <div className="MuiListItemText-root">
                                             <h6 className="MuiTypography-root MuiTypography-subtitle1 MuiTypography-colorTextSecondary">
-                                                <a href="#" onClick={this.showContent.bind(this,1)}> Foods
-                                                You Love</a>
+                                                <a href="#" onClick={this.showContent.bind(this,'https://www.youtube.com/watch?v=IpGNWFFsjA4&t=792s')}> ES6 문법 액기스(1) - 템플릿 스트링과 전개 연산자 </a>
                                             </h6>
                                         </div>
                                         <div className="MuiListItemIcon-root"></div>
@@ -128,8 +136,8 @@ class Detail extends React.Component {
                                             <h6 className="MuiTypography-root MuiTypography-subtitle1 MuiTypography-colorTextSecondary">2</h6>
                                         </div>
                                         <div className="MuiListItemText-root">
-                                            <h6 className="MuiTypography-root MuiTypography-subtitle1 MuiTypography-colorTextSecondary">Your
-                                                Job</h6>
+                                            <h6 className="MuiTypography-root MuiTypography-subtitle1 MuiTypography-colorTextSecondary">
+                                                <a href="#" onClick={this.showContent.bind(this,'https://d2.naver.com/helloworld/9297403')}> React 적용 가이드 - React 작동 방법 </a> </h6>
                                         </div>
                                         <div className="MuiListItemIcon-root"></div>
                                     </li>
@@ -138,8 +146,8 @@ class Detail extends React.Component {
                                             <h6 className="MuiTypography-root MuiTypography-subtitle1 MuiTypography-colorTextSecondary">3</h6>
                                         </div>
                                         <div className="MuiListItemText-root">
-                                            <h6 className="MuiTypography-root MuiTypography-subtitle1 MuiTypography-colorTextSecondary">Playing
-                                                and Watching Sports</h6>
+                                            <h6 className="MuiTypography-root MuiTypography-subtitle1 MuiTypography-colorTextSecondary">
+                                                <a href="#" onClick={this.showContent.bind(this,'https://d2.naver.com/helloworld/4966453')}>React 적용 가이드 - 네이버 메일 모바일 웹 적용기 </a></h6>
                                         </div>
                                         <div className="MuiListItemIcon-root"></div>
                                     </li>
