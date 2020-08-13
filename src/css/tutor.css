@@ -13,6 +13,7 @@
 .tutor-container{padding:0 3.33;}
 .tutor-list{padding:16px; margin: 0 auto;}
 .tutor-list > a{width:453.33px;}
+.tutor-list .img-fluid, .modal .img-fluid{max-height: 100px;}
 .figure-img{width:100px; height:100px;}
 .checkicon .MuiFormControlLabel-root{margin:0}
 .checkicon .MuiSvgIcon-root{width:1.5em; height:1.5em}
@@ -21,7 +22,7 @@
 .icon.off{background-color: red;}
 
 .modal .modal-header{background-color: #fff; border-bottom:none;}
-.modal .modal-header .header-cont{margin:35px 30px 0; padding:0 10px 20px; position: relative; border-bottom: 1px solid #dee2e6;}
+.modal .modal-header .header-cont{margin:35px 20px 0; padding:0 10px 20px; position: relative; border-bottom: 1px solid #dee2e6;}
 .modal .modal-header .close {position: absolute; top: 1rem; font-size: 3rem;}
 .modal .icon{top: 85px; left: 80px; z-index: 1; width:20px; height:20px; border-radius: 100%;}
 .modal .modal-content{border-radius: .7rem; max-height: 900px;}
