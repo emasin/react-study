@@ -23,7 +23,7 @@ class TutorItem extends React.Component {
         
         return (
             <>
-            <a key={this.props.index} onClick={this.handleShow} href="#none" style={{display:'inline-block', margin:'0 10px' , textDecoration:'none', color:'#444'}}>
+            <a key={this.props.index} onClick={this.handleShow} href="#none" style={{display:'inline-block', textDecoration:'none', color:'#444'}}>
                 <div className="card" style={{ width:'100%', padding:'16px', borderRadius:'8px', border:'none'}}>
                     <Figure style={{display:'flex'}}>
                         <Figure.Image style={{ marginRight:'16px', borderRadius:'8px'}} width={100} height={100} alt="100x100" src="https://camblyavatars.s3.amazonaws.com/5e79c033b65004aa26b6080es200"/>
@@ -76,8 +76,8 @@ class TutorItem extends React.Component {
                         <Button href="#" style={{ backgroundColor:'#228891',  width:'100%', border:'none', fontSize:'12px', padding:'8px 20px', margin: '0 3px'}}>지금 수업하기</Button>
                     </div>
                 </Modal.Header>
-                <Modal.Body style={{overflowY:'scroll', padding:'0 30px 40px'}}>
-                    <div className="cont-box" style={{marginTop:'20px'}}>
+                <Modal.Body style={{overflowY:'scroll', padding:'0 20px 35px'}}>
+                    <div className="cont-box" style={{marginTop:'30px'}}>
                         <iframe title="myiframe" src="https://www.youtube.com/embed/v=vfiJFAXTqIs" width="100%" height="300px" frameborder="0" allowfullscreen="1" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
                     </div>
                     <div className="cont-box flex">

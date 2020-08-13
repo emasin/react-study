@@ -12,7 +12,7 @@
 .tutor-txt{font-size: 14px; line-height: 1.4; color: rgb(119, 119, 119); cursor: pointer; font-weight: 300; margin-bottom: 10px; margin-top: 10px;}
 .tutor-container{padding:0 3.33;}
 .tutor-list{padding:16px; margin: 0 auto;}
-.tutor-list > a{width:453.33px;}
+.tutor-list > a{width:453.33px; margin-right:10px;}
 .tutor-list .img-fluid, .modal .img-fluid{max-height: 100px;}
 .figure-img{width:100px; height:100px;}
 .checkicon .MuiFormControlLabel-root{margin:0}
@@ -37,5 +37,5 @@
 
 
 @media (min-width:320px) and (max-width:500px){
-    .tutor-list > a{width:100%;}
+    .tutor-list > a{width:100%; margin-right:0}
 }

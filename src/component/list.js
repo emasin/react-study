@@ -22,7 +22,7 @@ class List extends React.Component {
         ];
         return (
             <>
-            <div style={{padding:'32px'}}>
+            <div style={{paddingTop:'30px'}}>
                 <div style={{margin:'0 10px'}}>
                     <h4 className="subtit">{lists[0].bigtext}</h4>
                     <p className="subtxt">{lists[0].smtext}</p>
@@ -37,7 +37,7 @@ class List extends React.Component {
                     </div>
                 </div>
             </div>
-            <div style={{padding:'32px'}}>
+            <div style={{paddingTop:'30px'}}>
                 <div style={{margin:'0 10px'}}>
                     <h4 className="subtit">{lists[1].bigtext}</h4>
                     <p className="subtxt">{lists[1].smtext}</p>
@@ -52,7 +52,7 @@ class List extends React.Component {
                     </div>
                 </div>
             </div>
-            <div style={{padding:'32px'}}>
+            <div style={{paddingTop:'30px'}}>
                 <div style={{margin:'0 10px'}}>
                     <h4 className="subtit">{lists[2].bigtext}</h4>
                     <p className="subtxt">{lists[2].smtext}</p>
