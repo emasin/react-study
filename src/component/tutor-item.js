@@ -29,7 +29,7 @@ class TutorItem extends React.Component {
                         <Figure.Image style={{ marginRight:'16px', borderRadius:'8px'}} width={100} height={100} alt="100x100" src="https://camblyavatars.s3.amazonaws.com/5e79c033b65004aa26b6080es200"/>
                         <span className="icon on"></span>{/* class on 초록, off 빨강, 기본값 회색 */}
                         <Figure.Caption>
-                            <span className="tutor-name">W. Sol</span>
+                            <span className="tutor-name">{data.name}</span>
                             <span className="checkicon">
                                 <FormControlLabel control={<Checkbox icon={<FavoriteBorder />} checkedIcon={<Favorite />} name="checkedH"/>}/>
                             </span>

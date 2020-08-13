@@ -15,6 +15,28 @@ export function changeColor(color){
     }
 }
 
+
+export  function loadTutor(){
+    return(dispatch)=>{
+        return axios.get("http://www.devkids.co.kr/tutor.json").then((response)=>{
+            dispatch(loadTutorAction(response.data));
+        })
+    }
+}
+
+
+
+export function loadTutorAction(data){
+    return{
+        type:"LOAD_TUTOR_ACTION",
+        payload:data
+    }
+}
+
+
+
+
+
 export  function loadContent(){
     return(dispatch)=>{
         return axios.get("https://app.devkids.co.kr/data/data.json").then((response)=>{
