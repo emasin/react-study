@@ -7,7 +7,7 @@ import Content from './container/content-container.js';
 import Detail from "./component/Detail";
 function App() {
   return (
-    <div className="App">
+    <div className="">
 
         <Route  exact path="/react/" component={Content} />
         <Route  path="/courses" component={Content} />
