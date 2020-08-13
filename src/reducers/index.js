@@ -1,7 +1,9 @@
 let defaultState={
     color:"red",
     data:[],
-    detailData:{}
+    detailData:{},
+    isLogin:false,
+    tutor:[]
 }
 
 
@@ -15,6 +17,11 @@ const mainReducer=(state=defaultState,action)=>{
         return{
             ...state,
             data:action.data
+        }
+    }else if(action.type==="LOAD_TUTOR_ACTION"){
+        return{
+            ...state,
+            tutor:action.payload
         }
     }else if(action.type==="LOAD_DETAIL_CONTENT"){
         return{
