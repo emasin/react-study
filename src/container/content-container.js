@@ -13,11 +13,11 @@ class ContentContainer extends React.Component {
     }
 
     render() {
-        const {data, loadContent} = this.props;
+        const {data} = this.props;
         return (
             <>
                 <List data={data}></List>
-                <Tutor data={data}></Tutor>
+
             </>
         )
     }
