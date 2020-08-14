@@ -18,7 +18,7 @@ export function changeColor(color){
 
 export  function loadTutor(){
     return(dispatch)=>{
-        return axios.get("http://www.devkids.co.kr/tutor.json").then((response)=>{
+        return axios.get("https://app.devkids.co.kr/data/tutor.json").then((response)=>{
             dispatch(loadTutorAction(response.data));
         })
     }

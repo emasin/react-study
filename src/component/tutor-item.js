@@ -40,10 +40,10 @@ class TutorItem extends React.Component {
                             </div>
                             <div className="country">
                                 <img id="badge" alt="flag of Great Britain" src="https://www.cambly.com/static/images/country-flag-icons/GB.png" />
-                                <span>London, England</span>
+                                <span>{data.nation}</span>
                             </div>
                             <div className="classbox">
-                                <span>1,000회+ 수업</span><span>교사 자격증</span>
+                                {data.tag}
                             </div>
                             </div>
                         </Figure.Caption>
