@@ -1,7 +1,20 @@
 import React, { useState, useEffect } from 'react';
+import styled from 'styled-components';
 import NewsItems from './NewsItems';
 import axios from 'axios';
 
+const NewsListBlcok = styled.div` 
+    box-sizing: border-box;
+    padding-bottom: 3rem;
+    width: 768px;
+    margin: 0 auto;
+    margin-top: 2rem;
+    @media screen and (max-width: 768px){
+        width:100%;
+        padding-left: 1rem;
+        padding-right: 1rem;
+    }
+    `;
 
 const NewsList = () => {
     const [articles, setArticle] = useState(null);
@@ -23,7 +36,7 @@ const NewsList = () => {
     },[]); // 첫 랜더 후 한번만 호출. 비동기를 마치면 loadig 값이 수정되어 화면 출력
 
     if(loading) {
-        return <p>대기중 ....</p>
+        return <NewsListBlcok>대기중 ....</NewsListBlcok>
     } // 첫 화면 loading 화면 구성, 만약 API가 끝마치지 않으면 계속 대기 중 출력
 
     if(!articles){
@@ -33,11 +46,11 @@ const NewsList = () => {
 
 
     return (
-        <p>
+        <NewsListBlcok>
             {articles.map(article => (
                 <NewsItems key={article.url} article={article} />
             ))}
-        </p>
+        </NewsListBlcok>
     );
 };
 
