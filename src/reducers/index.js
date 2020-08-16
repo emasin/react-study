@@ -23,11 +23,6 @@ const mainReducer=(state=defaultState,action)=>{
             ...state,
             tutor:action.payload
         }
-    }else if(action.type==="LOAD_SSR_ACTION"){
-        return{
-            ...state,
-            ssr:action.payload
-        }
     }else if(action.type==="LOAD_DETAIL_CONTENT"){
         return{
             ...state,
