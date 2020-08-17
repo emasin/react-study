@@ -17,6 +17,7 @@ const NewsListBlcok = styled.div`
     `;
 
 const NewsList = () => {
+
     const [articles, setArticle] = useState(null);
     const [loading, setLoading] = useState(false);
 
@@ -47,6 +48,7 @@ const NewsList = () => {
 
     return (
         <NewsListBlcok>
+            <button onClick={this.togglePopup.bind(this)}>show popup</button>
             {articles.map(article => (
                 <NewsItems key={article.url} article={article} />
             ))}
