@@ -65,7 +65,7 @@ class Detail extends React.Component {
                                 </div>
                                 <div>
                                     <p className="MuiTypography-root MuiTypography-body2 MuiTypography-colorTextSecondary"></p>
-                                    <div>
+                                    <div style={{marginBottom:'20px'}}>
                                         <button onClick={this.showAd.bind(this)}
                                             className="MuiButtonBase-root MuiButton-root MuiButton-contained MuiButton-containedSecondary MuiButton-sizeLarge MuiButton-fullWidth"
                                             tabIndex="0" type="button">
