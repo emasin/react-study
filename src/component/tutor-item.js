@@ -8,6 +8,7 @@ import FormControlLabel from "@material-ui/core/FormControlLabel";
 import Checkbox from "@material-ui/core/Checkbox";
 import Favorite from "@material-ui/icons/Favorite";
 import FavoriteBorder from "@material-ui/icons/FavoriteBorder";
+import ReactPlayer from 'react-player';
 import { Link, Route } from 'react-router-dom';
 
 class TutorItem extends React.Component {
@@ -78,7 +79,7 @@ class TutorItem extends React.Component {
                 </Modal.Header>
                 <Modal.Body style={{overflowY:'scroll', padding:'0 20px 35px'}}>
                     <div className="cont-box" style={{marginTop:'30px'}}>
-                        <iframe title="myiframe" src="https://www.youtube.com/embed/v=vfiJFAXTqIs" width="100%" height="300px" frameborder="0" allowfullscreen="1" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                        <ReactPlayer url='https://www.youtube.com/watch?v=7C2z4GqqS5E' playing controls width="100%" height="300px"/>
                     </div>
                     <div className="cont-box flex">
                         <div className="stars">
