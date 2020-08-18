@@ -9,7 +9,7 @@ import '../css/style.css'
 class ContentContainer extends React.Component {
 
     componentDidMount() {
-        this.props.loadContent();
+        this.props.loadTopic1();
     }
 
     render() {
@@ -27,7 +27,7 @@ class ContentContainer extends React.Component {
 const mapStateToProps = (state) => {
 
     return {
-        data: state.data
+        data: state.topic1
     };
 
 };
@@ -35,8 +35,8 @@ const mapStateToProps = (state) => {
 
 const mapDispatchToProps = (dispatch) => {
     return {
-        loadContent(){
-            dispatch(actionCreators.loadContent()) // 액션 메서드
+        loadTopic1(){
+            dispatch(actionCreators.loadTopic1()) // 액션 메서드
         }
     }
 }

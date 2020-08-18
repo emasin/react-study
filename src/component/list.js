@@ -6,8 +6,8 @@ class List extends React.Component {
         const lists = [
             {
                 id: 1,
-                bigtext: '유창한 영어의 기본요소',
-                smtext: '유창한 영어로 대화하며 자신감을 키워보세요. 간단한 대화부터 복잡한 시사 문제에 대해 논리정연한 의견을 표현하는 것까지, 다양한 레벨의 과정을 통해 모두가 무언가를 배울 수 있습니다.'
+                bigtext: '프론트엔드 개발의 기본요소',
+                smtext: '간단한 웹 개발로 자신감을 키워보세요. 간단한 웹 화면 부터 복잡한 웹 프로그래밍 까지, 다양한 예제와 강의를 통해 배울 수 있습니다.'
             },
             {
                 id: 2,
@@ -29,44 +29,15 @@ class List extends React.Component {
                 </div>
                 <div style={{overflow:'hidden',overflowX:'auto', marginTop:'10px'}}>
                     <div className="card-list" >
-                        {data.map((contact, i) => {
+                        {data.map((topic, i) => {
                         return (
-                        <ListItem index={i} data={contact}></ListItem>
+                        <ListItem index={i} data={topic}></ListItem>
                             )
                         })}
                     </div>
                 </div>
             </div>
-            <div style={{paddingTop:'30px'}}>
-                <div style={{margin:'0 10px'}}>
-                    <h4 className="subtit">{lists[1].bigtext}</h4>
-                    <p className="subtxt">{lists[1].smtext}</p>
-                </div>
-                <div style={{overflow:'hidden',overflowX:'auto', marginTop:'10px'}}>
-                    <div className="card-list" >
-                        {data.map((contact, i) => {
-                            return (
-                                <ListItem index={i} data={contact}></ListItem>
-                            )
-                        })}
-                    </div>
-                </div>
-            </div>
-            <div style={{paddingTop:'30px'}}>
-                <div style={{margin:'0 10px'}}>
-                    <h4 className="subtit">{lists[2].bigtext}</h4>
-                    <p className="subtxt">{lists[2].smtext}</p>
-                </div>
-                <div style={{overflow:'hidden',overflowX:'auto', marginTop:'10px'}}>
-                    <div className="card-list" >
-                        {data.map((contact, i) => {
-                            return (
-                                <ListItem index={i} data={contact}></ListItem>
-                            )
-                        })}
-                    </div>
-                </div>
-            </div>
+
             </>
         )
     }

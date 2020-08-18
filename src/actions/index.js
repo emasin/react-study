@@ -72,3 +72,22 @@ export function changeContentDetail(data){
         detailData:data
     }
 }
+
+
+
+
+export  function loadTopic1(){
+    return(dispatch)=>{
+        return axios.get("http://localhost:5001/fbweb-31a5f/us-central1/api/topics").then((response)=>{
+            dispatch(loadTopic1Action(response.data));
+        })
+    }
+}
+
+
+export function loadTopic1Action(data){
+    return{
+        type:"LOAD_TOPIC1",
+        topic:data
+    }
+}

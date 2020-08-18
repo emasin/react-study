@@ -3,7 +3,8 @@ let defaultState={
     data:[],
     detailData:{},
     isLogin:false,
-    tutor:[]
+    tutor:[],
+    topic1:[]
 }
 
 
@@ -27,6 +28,11 @@ const mainReducer=(state=defaultState,action)=>{
         return{
             ...state,
             detailData:action.detailData
+        }
+    }else if(action.type==="LOAD_TOPIC1"){
+        return{
+            ...state,
+            topic1:action.topic
         }
     }else{
         return{
