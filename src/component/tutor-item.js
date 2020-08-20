@@ -9,6 +9,7 @@ import Checkbox from "@material-ui/core/Checkbox";
 import Favorite from "@material-ui/icons/Favorite";
 import FavoriteBorder from "@material-ui/icons/FavoriteBorder";
 import ReactPlayer from 'react-player';
+import ListItem from "./list-item";
 import { Link, Route } from 'react-router-dom';
 
 class TutorItem extends React.Component {
@@ -78,7 +79,7 @@ class TutorItem extends React.Component {
                     </div>
                 </Modal.Header>
                 <Modal.Body style={{overflowY:'scroll', padding:'0 20px 35px'}}>
-                    <div className="cont-box" style={{marginTop:'30px'}}>
+                    <div className="cont-box" style={{marginTop:'20px'}}>
                         <ReactPlayer url='https://www.youtube.com/watch?v=7C2z4GqqS5E' playing controls width="100%" height="300px"/>
                     </div>
                     <div className="cont-box flex">
@@ -93,11 +94,11 @@ class TutorItem extends React.Component {
                             <span>교사 자격증</span>
                         </div>
                     </div>
-                    <div className="cont-box" style={{paddingBottom:'20px', borderBottom:'1px solid #dee2e6'}}>
+                    <div className="cont-box" style={{paddingBottom:'20px'}}>
                         <div style={{fontSize:'1.6rem', lineHeight:'1.5', textAlign:'center', marginBottom:'20px'}}>{data.title}</div>
                         <Button>한국어(으)로 번역</Button>
                     </div>
-                    <div className="cont-box">
+                    <div className="cont-box" style={{borderTop:'1px solid #dee2e6'}}>
                         <h6 style={{fontSize:'2rem', lineHeight:'1.6', marginBottom:'20px'}}>자기소개</h6>
                         <div className="detail-box">
                             <p style={{fontSize:'1.8rem', lineHeight:'1.5', marginBottom:'10px'}}>언어</p>
@@ -106,6 +107,36 @@ class TutorItem extends React.Component {
                         <div className="detail-box">
                             <p style={{fontSize:'1.8rem', lineHeight:'1.5', marginBottom:'10px'}}>전문분야</p>
                             <span>연설지도</span><span>억양지도</span><span>문화</span><span>편안한 대화</span>
+                        </div>
+                        <div className="detail-box">
+                            <p style={{fontSize:'1.8rem', lineHeight:'1.5', marginBottom:'10px'}}>관심분야</p>
+                            <p>Travel, reading, writing, blogging, bicycling, going to concerts and music festivals (all kinds of music), cats, learning to play the accordion! I also enjoy exchanging postcards with other people all over the world!</p>
+                            <Button>한국어(으)로 번역</Button>
+                        </div>
+                    </div>
+                    <div className="cont-box" style={{borderTop:'1px solid #dee2e6'}}>
+                        <h6 style={{fontSize:'2rem', lineHeight:'1.6', marginBottom:'20px'}}>이력서</h6>
+                        <div className="detail-box">
+                            <p style={{fontSize:'1.8rem', lineHeight:'1.5', marginBottom:'10px'}}>학력</p>
+                            <p>University of Minnesota, Cultural Studies (B.A.) and Second Languages and Cultures (MEd.)</p>
+                            <Button>한국어(으)로 번역</Button>
+                        </div>
+                    </div>
+                    <div className="cont-box" style={{borderTop:'1px solid #dee2e6'}}>
+                        <h6 style={{fontSize:'2rem', lineHeight:'1.6', marginBottom:'20px'}}>커리큘럼</h6>
+                        <div className="detail-box">
+                            <div style={{overflow:'hidden',overflowX:'auto', marginTop:'10px'}}>
+                                <div className="card-list" >
+                                    ..list
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div className="cont-box" style={{borderTop:'1px solid #dee2e6'}}>
+                        <h6 style={{fontSize:'2rem', lineHeight:'1.6', marginBottom:'20px'}}>일정</h6>
+                        <p style={{fontSize:'1.8rem', lineHeight:'1.5', marginBottom:'10px'}}>요일을 선택하세요</p>
+                        <div className="detail-box">
+                            ..calender
                         </div>
                     </div>
                 </Modal.Body>

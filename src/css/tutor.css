@@ -21,7 +21,7 @@
 .icon.on{background-color: rgb(150 196 94);}
 .icon.off{background-color: red;}
 
-.modal .modal-header{background-color: #fff; border-bottom:none;}
+.modal .modal-header{background-color: #fff; border-bottom:none; min-height: 218px;}
 .modal .modal-header .header-cont{margin:35px 20px 0; padding:0 10px 20px; position: relative; border-bottom: 1px solid #dee2e6;}
 .modal .modal-header .close {position: absolute; top: 1rem; font-size: 3rem;}
 .modal .icon{top: 85px; left: 80px; z-index: 1; width:20px; height:20px; border-radius: 100%;}
@@ -34,7 +34,6 @@
 .modal .cont-box .stars .eval{display: inline-block; font-size: 12px; margin-left:5px; line-height: 1; color:#444;}
 .modal .cont-box .stars, .modal .cont-box .classbox{display: inline-block;}
 .modal .cont-box .detail-box > span{display: inline-block; font-size: 1.4rem; background-color: #228891; border-radius: 50px; color:#fff; padding:5px 10px; margin-right: 5px; margin-bottom:5px}
-
 
 @media (min-width:320px) and (max-width:500px){
     .tutor-list > a{width:100%; margin-right:0}
