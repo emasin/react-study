@@ -78,7 +78,8 @@ export function changeContentDetail(data){
 
 export  function loadTopic1(){
     return(dispatch)=>{
-        return axios.get("http://localhost:5001/fbweb-31a5f/us-central1/api/topics").then((response)=>{
+        //local
+        return axios.get("https://us-central1-fbweb-31a5f.cloudfunctions.net/api/topics").then((response)=>{
             dispatch(loadTopic1Action(response.data));
         })
     }
@@ -89,5 +90,27 @@ export function loadTopic1Action(data){
     return{
         type:"LOAD_TOPIC1",
         topic:data
+    }
+}
+
+
+
+export  function login(){
+    return(dispatch)=>{
+        //local
+        //return dispatch(loginAction(true));
+
+        return axios.get("https://us-central1-fbweb-31a5f.cloudfunctions.net/api/login").then((response)=>{
+            dispatch(loginAction(response.data.isLogin));
+        })
+
+    }
+}
+
+
+export function loginAction(data){
+    return{
+        type:"LOGIN",
+        isLogin:data
     }
 }

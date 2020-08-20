@@ -4,7 +4,8 @@ let defaultState={
     detailData:{},
     isLogin:false,
     tutor:[],
-    topic1:[]
+    topic1:[],
+
 }
 
 
@@ -33,6 +34,11 @@ const mainReducer=(state=defaultState,action)=>{
         return{
             ...state,
             topic1:action.topic
+        }
+    }else if(action.type==="LOGIN"){
+        return{
+            ...state,
+            isLogin:action.isLogin
         }
     }else{
         return{

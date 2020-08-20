@@ -8,6 +8,8 @@ import InputAdornment from '@material-ui/core/InputAdornment';
 import FormControl from '@material-ui/core/FormControl';
 import Visibility from '@material-ui/icons/Visibility';
 import VisibilityOff from '@material-ui/icons/VisibilityOff';
+import {connect} from "react-redux";
+import * as actionCreators from "../actions/index.js"
 
 function InputAdornments() {
     const [values, setValues] = React.useState({
@@ -55,6 +57,7 @@ function InputAdornments() {
 class Login extends React.Component {
     
     render() {
+        const {data} = this.props;
         return (
             <>
                 <div style={{textAlign:'center', margin:'20px auto', width:'300px'}}>
@@ -70,16 +73,28 @@ class Login extends React.Component {
                 <div style={{textAlign:'center', margin:'20px auto', width:'300px', fontSize:'1.4rem'}}>
                     <p style={{lineHeight:'1.7'}}>이메일 주소로 로그인</p>
                     <div>
-                        <TextField id="outlined-full-width" fullWidth margin="normal" InputLabelProps={{ shrink: true,}} variant="outlined"/>
+                        <TextField id="outlined-full-width" fullWidth margin="normal" InputLabelProps={{ shrink: true,}} variant="outlined" value={this.props.data} />
                         <InputAdornments/>
                         <p style={{textAlign:'left'}}><a href="#none">비밀번호를 잊으셨나요?</a></p>
-                        <Button variant="contained" style={{ backgroundColor:'#228891', color:'#fff', fontSize:'12px', margin:'20px 0'}}>로그인</Button>
+                        <Button variant="contained" style={{ backgroundColor:'#228891', color:'#fff', fontSize:'12px', margin:'20px 0'}} onClick={this.props.login}>로그인</Button>
                         <p style={{textAlign:'left'}}>Cambly에 처음이신가요? <span><a href="#none">회원가입</a></span></p>
                     </div>
                 </div>
             </>
         )
     }
+
 }
 
-export default Login;
+const s = (state) => {
+
+    return {
+        data: state.isLogin,
+
+    };
+
+};
+
+
+
+export default connect(s,actionCreators) (Login);
