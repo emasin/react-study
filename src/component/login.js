@@ -10,6 +10,7 @@ import Visibility from '@material-ui/icons/Visibility';
 import VisibilityOff from '@material-ui/icons/VisibilityOff';
 import {connect} from "react-redux";
 import * as actionCreators from "../actions/index.js"
+import Kakao from 'kakaojs';
 
 function InputAdornments() {
     const [values, setValues] = React.useState({
@@ -54,6 +55,23 @@ function InputAdornments() {
     );
   }
 
+  function kakaoLogin() {
+    Kakao.Auth.loginForm({
+      success: (res) => {
+        console.log(res);
+        Kakao.API.request({
+					url : '/v2/user/me',
+						success : function(res) {
+              console.log(res);
+						}
+				});
+      },
+      fail: (res) => {
+        console.log(res);
+      }
+    });
+  }
+
 class Login extends React.Component {
     
     render() {
@@ -67,7 +85,7 @@ class Login extends React.Component {
                 </div>
                 <div style={{margin:'10px auto', textAlign:'center'}}>
                     <Button variant="outlined" style={{margin:'6px', fontSize:'1.25rem', lineHeight:'1.8', textTransform:'none'}}>Google</Button>
-                    <Button variant="outlined" style={{margin:'6px', fontSize:'1.25rem', lineHeight:'1.8', textTransform:'none'}}>kakao</Button>
+                    <Button onClick={kakaoLogin} variant="outlined" style={{margin:'6px', fontSize:'1.25rem', lineHeight:'1.8', textTransform:'none'}}>kakao</Button>
                 </div>
                 <div style={{display:'flex', width:'350px', margin:'0 auto'}}><hr style={{width: '40%'}}/><span style={{margin:'0 10px', fontSize:'1.25rem'}}>또는</span><hr style={{width: '40%'}}/></div>
                 <div style={{textAlign:'center', margin:'20px auto', width:'300px', fontSize:'1.4rem'}}>
