@@ -14,85 +14,65 @@ import Kakao from 'kakaojs';
 
 function InputAdornments() {
     const [values, setValues] = React.useState({
-      amount: '',
-      password: '',
-      weight: '',
-      weightRange: '',
-      showPassword: false,
+        amount: '',
+        password: '',
+        weight: '',
+        weightRange: '',
+        showPassword: false,
     });
-  
+
     const handleChange = (prop) => (event) => {
-      setValues({ ...values, [prop]: event.target.value });
+        setValues({ ...values, [prop]: event.target.value });
     };
-  
+
     const handleClickShowPassword = () => {
-      setValues({ ...values, showPassword: !values.showPassword });
+        setValues({ ...values, showPassword: !values.showPassword });
     };
-  
+
     return (
         <div className="login-content">
-          <FormControl fullWidth variant="outlined" style={{color:'#228891'}} margin="normal">
-            <InputLabel htmlFor="component-outlined" title="password"></InputLabel>
-            <OutlinedInput
-              id="outlined-adornment-password"
-              type={values.showPassword ? 'text' : 'password'}
-              value={values.password}
-              onChange={handleChange('password')}
-              endAdornment={
-                <InputAdornment position="end">
-                  <IconButton
-                    aria-label="toggle password visibility"
-                    onClick={handleClickShowPassword}
-                    edge="end"
-                  >
-                    {values.showPassword ? <Visibility /> : <VisibilityOff />}
-                  </IconButton>
-                </InputAdornment>
-              }
-            />
-          </FormControl>
+            <FormControl fullWidth variant="outlined" style={{color:'#228891'}} margin="normal">
+                <InputLabel htmlFor="component-outlined" title="password"></InputLabel>
+                <OutlinedInput
+                    id="outlined-adornment-password"
+                    type={values.showPassword ? 'text' : 'password'}
+                    value={values.password}
+                    onChange={handleChange('password')}
+                    endAdornment={
+                        <InputAdornment position="end">
+                            <IconButton
+                                aria-label="toggle password visibility"
+                                onClick={handleClickShowPassword}
+                                edge="end"
+                            >
+                                {values.showPassword ? <Visibility /> : <VisibilityOff />}
+                            </IconButton>
+                        </InputAdornment>
+                    }
+                />
+            </FormControl>
         </div>
     );
-  }
+}
 
+function kakaoLogin() {
+    Kakao.Auth.loginForm({
+        success: (res) => {
+            console.log(res);
+            Kakao.API.request({
+                url : '/v2/user/me',
+                success : function(res) {
+                    console.log(res);
+                }
+            });
+        },
+        fail: (res) => {
+            console.log(res);
+        }
+    });
+}
 
 class Login extends React.Component {
-
-
-
-    constructor(props) {
-        super(props);
-        this.kakaoLoginPop = this.kakaoLoginPop.bind(this);
-        this.klogin = this.kakaoLogin.bind(this);
-    }
-
-    kakaoLoginPop = (e)=> {
-       //var  klogin = kakaoLogin.bind(this);
-        Kakao.Auth.loginForm({
-            success: (res) => {
-                this.klogin(this.props);
-
-            },
-            fail: (res) => {
-                console.log(res);
-            }
-        });
-    }
-
-    kakaoLogin = (props)=> {
-        Kakao.API.request({
-            url : '/v2/user/me',
-            success : function(res) {
-                console.log(props);
-                props.login();
-                //console.log(res);
-
-
-
-            }
-        });
-    }
-
 
     render() {
         const {data} = this.props;
@@ -105,7 +85,7 @@ class Login extends React.Component {
                 </div>
                 <div style={{margin:'10px auto', textAlign:'center'}}>
                     <Button variant="outlined" style={{margin:'6px', fontSize:'1.25rem', lineHeight:'1.8', textTransform:'none'}}>Google</Button>
-                    <Button onClick={this.kakaoLoginPop} variant="outlined" style={{margin:'6px', fontSize:'1.25rem', lineHeight:'1.8', textTransform:'none'}}>kakao</Button>
+                    <Button onClick={kakaoLogin} variant="outlined" style={{margin:'6px', fontSize:'1.25rem', lineHeight:'1.8', textTransform:'none'}}>kakao</Button>
                 </div>
                 <div style={{display:'flex', width:'350px', margin:'0 auto'}}><hr style={{width: '40%'}}/><span style={{margin:'0 10px', fontSize:'1.25rem'}}>또는</span><hr style={{width: '40%'}}/></div>
                 <div style={{textAlign:'center', margin:'20px auto', width:'300px', fontSize:'1.4rem'}}>
