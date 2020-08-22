@@ -11,6 +11,7 @@ import VisibilityOff from '@material-ui/icons/VisibilityOff';
 import {connect} from "react-redux";
 import * as actionCreators from "../actions/index.js"
 import Kakao from 'kakaojs';
+import { GoogleLogin } from 'react-google-login';
 
 function InputAdornments() {
     const [values, setValues] = React.useState({
@@ -73,7 +74,6 @@ function kakaoLogin() {
 }
 
 class Login extends React.Component {
-
     render() {
         const {data} = this.props;
         return (
@@ -84,7 +84,17 @@ class Login extends React.Component {
                     <p style={{lineHeight:'1.7', fontSize:'1.4rem'}}>로그인 방법</p>
                 </div>
                 <div style={{margin:'10px auto', textAlign:'center'}}>
-                    <Button variant="outlined" style={{margin:'6px', fontSize:'1.25rem', lineHeight:'1.8', textTransform:'none'}}>Google</Button>
+                    <GoogleLogin
+                        clientId="294069593193-et3t9jjuvs8ciitoam8hfmivv8cb34ji.apps.googleusercontent.com"    
+                        onSuccess={(res)=>{
+                            console.log(res);
+                        }}
+                        onFailure={(err)=>{
+                            console.log(err);
+                        }}
+                    >
+                        <Button variant="outlined" style={{margin:'6px', fontSize:'1.25rem', lineHeight:'1.8', textTransform:'none'}}>Google</Button>
+                    </GoogleLogin>
                     <Button onClick={kakaoLogin} variant="outlined" style={{margin:'6px', fontSize:'1.25rem', lineHeight:'1.8', textTransform:'none'}}>kakao</Button>
                 </div>
                 <div style={{display:'flex', width:'350px', margin:'0 auto'}}><hr style={{width: '40%'}}/><span style={{margin:'0 10px', fontSize:'1.25rem'}}>또는</span><hr style={{width: '40%'}}/></div>
