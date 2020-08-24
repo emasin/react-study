@@ -84,7 +84,7 @@ class Login extends React.Component {
                     <p style={{lineHeight:'1.7', fontSize:'1.4rem'}}>로그인 방법</p>
                 </div>
                 <div style={{margin:'10px auto', textAlign:'center'}}>
-                    <GoogleLogin
+                    <GoogleLogin style={{ fontSize:'1.25rem', lineHeight:'1.8', textTransform:'none'}}
                         clientId="294069593193-et3t9jjuvs8ciitoam8hfmivv8cb34ji.apps.googleusercontent.com"    
                         onSuccess={(res)=>{
                             console.log(res);
@@ -92,12 +92,17 @@ class Login extends React.Component {
                         onFailure={(err)=>{
                             console.log(err);
                         }}
-                    >
-                        <Button variant="outlined" style={{margin:'6px', fontSize:'1.25rem', lineHeight:'1.8', textTransform:'none'}}>Google</Button>
-                    </GoogleLogin>
-                    <Button onClick={kakaoLogin} variant="outlined" style={{margin:'6px', fontSize:'1.25rem', lineHeight:'1.8', textTransform:'none'}}>kakao</Button>
+                    >Google</GoogleLogin>
+                    <Button onClick={kakaoLogin} variant="outlined" style={{borderColor:'rgb(236 236 236)', marginTop:'-5px', backgroundColor:'#fff', padding:0, marginLeft:'6px', fontSize:'1.4rem', textTransform:'none', boxShadow:'rgb(178 180 182) 0px 1.7px', color:'rgba(0, 0, 0, 0.54)'}}>
+                      <div style={{padding:'10px', marginRight:'10px'}}>
+                        <span style={{ width:'18px', height:'18px', display:'block'}}>
+                          <img src="../img/kakaoicon.jpg" style={{width: '22px', marginTop:'-10px'}}></img>
+                        </span>
+                      </div>
+                      <span style={{padding:'10px', lineHeight:'1.7'}}>kakao</span>
+                      </Button>
                 </div>
-                <div style={{display:'flex', width:'350px', margin:'0 auto'}}><hr style={{width: '40%'}}/><span style={{margin:'0 10px', fontSize:'1.25rem'}}>또는</span><hr style={{width: '40%'}}/></div>
+                <div style={{display:'flex', width:'350px', margin:'0 auto'}}><hr style={{width: '40%'}}/><span style={{margin:'0 10px', fontSize:'1.25rem'}}>또는</span><hr style={{width:'40%'}}/></div>
                 <div style={{textAlign:'center', margin:'20px auto', width:'300px', fontSize:'1.4rem'}}>
                     <p style={{lineHeight:'1.7'}}>이메일 주소로 로그인</p>
                     <div>
