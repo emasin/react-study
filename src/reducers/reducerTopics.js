@@ -1,6 +1,6 @@
 
 export default function (state = [], action) {
-    console.log(action.type)
+
     if(action.type==="CHANGE_COLOR"){
         return{
             ...state,

@@ -8,9 +8,9 @@ import Contents from './container/content-container.js';
 import Tutor from './container/tutor-container.js';
 import Ssr from './component/ssr';
 import Login from './component/login';
-import Qna from './component/qnalist';
+import Qna from './blossomme/QnaContainer';
 import Detail from "./component/Detail";
-import Qnadetail from './component/qnalist-detail';
+
 import 'antd/dist/antd.css';
 import ActionContainer from "./hooks/ActionContainer";
 const {Header,Footer,Sider,Content} = Layout;
@@ -35,8 +35,8 @@ function App() {
                     <Menu.Item key="5">
                         <Link to='/login'>로그인</Link>
                     </Menu.Item>
-                    <Menu.Item key="5">
-                        <Link to='/qnalist'>Q&amp;A</Link>
+                    <Menu.Item key="6">
+                        <Link to='/blossome/qnalist'>Q&amp;A</Link>
                     </Menu.Item>
                 </Menu>
             </Header>
@@ -48,9 +48,8 @@ function App() {
                     <Route path="/ssr" component={Ssr} />
                     <Route path="/movies" component={ActionContainer} />
                     <Route path="/login" component={Login} />
-                    <Route path="/qnalist" component={Qna} />
-                    <Route path="/qnalist-detail" component={Qnadetail} />
-                    <Route path="/detail/:name" component={Detail} />
+                    <Route path="/blossome/qnalist" component={Qna} />
+
                     <Route path="/react/detail/:name" component={Detail} />
                 </Content>
             </Layout>
