@@ -10,6 +10,7 @@ import Ssr from './component/ssr';
 import Login from './component/login';
 import Qna from './component/qnalist';
 import Detail from "./component/Detail";
+import Qnadetail from './component/qnalist-detail';
 import 'antd/dist/antd.css';
 const {Header,Footer,Sider,Content} = Layout;
 function App() {
@@ -43,6 +44,7 @@ function App() {
                     <Route path="/ssr" component={Ssr} />
                     <Route path="/login" component={Login} />
                     <Route path="/qnalist" component={Qna} />
+                    <Route path="/qnalist-detail" component={Qnadetail} />
                     <Route path="/detail/:name" component={Detail} />
                     <Route path="/react/detail/:name" component={Detail} />
                 </Content>

@@ -66,7 +66,7 @@ class TutorItem extends React.Component {
                             <Figure.Image style={{ marginRight:'16px', borderRadius:'100%'}} width={100} height={100} alt="100x100" src="https://camblyavatars.s3.amazonaws.com/5e79c033b65004aa26b6080es200"/>
                             <span className="icon on"></span>{/* class on 초록, off 빨강, 기본값 회색 */}
                             <Figure.Caption style={{margin:'20px'}}>
-                                <span className="tutor-name">W. Sol</span>
+                                <span className="tutor-name">{data.name}</span>
                                 <div className="tutor-wrab">
                                     <div className="country">
                                         <img id="badge" alt="flag of Great Britain" src="https://www.cambly.com/static/images/country-flag-icons/GB.png" />
