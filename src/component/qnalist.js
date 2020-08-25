@@ -12,11 +12,15 @@ class Qnalist extends React.Component {
                 <div style={{padding:'30px 0'}}>
                     <Button variant="outlined">문의하기</Button>
                 </div>
-                <div className="qnalist" style={{textAlign:'left', position:'relative'}}>
-                        <span>2020-08-10 12:05:29</span>
-                        <h4>Reactlist</h4>
-                        <span style={{position:'absolute', right:0, top:'50%', transform:'translateY(-50%)'}}>{'>'}</span>
-                </div>
+                <ul className="qnalist">
+                    <li style={{textAlign:'left', listStyle:'none',position:'relative', padding:'40px', marginBottom:'40px', border:'1px solid #d8dbe4', backgroundColor:'#fff'}}>
+                        <a href="#" style={{textDecoration: 'none'}}>
+                            <span style={{fontSize:'1.6rem', color:'#222'}}>2020-08-10 12:05:29</span>
+                            <h4 style={{fontSize:'2.4rem', lineHeight:'36px', marginTop:'15px'}}>Reactlist</h4>
+                            <span style={{position:'absolute', right:'40px', top:'50%', transform:'translateY(-50%)', fontSize:'3rem', color:'#222'}}>{'>'}</span>
+                        </a>
+                    </li>
+                </ul>
             </Container>
             </>
         )
