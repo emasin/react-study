@@ -13,6 +13,7 @@ import * as actionCreators from "../actions/index.js"
 import Kakao from 'kakaojs';
 import { GoogleLogin } from 'react-google-login';
 import KakaoIcon from '../img/kakaoicon.jpg'; 
+import '../css/login.css';
 
 function InputAdornments() {
     const [values, setValues] = React.useState({
@@ -94,7 +95,7 @@ class Login extends React.Component {
                             console.log(err);
                         }}
                     >Google</GoogleLogin>
-                    <Button onClick={kakaoLogin} variant="outlined" style={{borderColor:'rgb(236 236 236)', marginTop:'-5px', backgroundColor:'#fff', padding:0, marginLeft:'6px', fontSize:'1.4rem', textTransform:'none', boxShadow:'rgb(178 180 182) 0px 1.7px', color:'rgba(0, 0, 0, 0.54)'}}>
+                    <Button onClick={kakaoLogin} variant="outlined" style={{borderColor:'rgb(236 236 236)', marginTop:'-6px', backgroundColor:'#fff', padding:0, marginLeft:'6px', fontSize:'1.4rem', textTransform:'none', boxShadow:'rgb(178 180 182) 0px 1.7px', color:'rgba(0, 0, 0, 0.54)'}}>
                       <div style={{padding:'10px', marginRight:'10px'}}>
                         <span style={{ width:'21px', height:'21px', display:'block'}}>
                           <img src={KakaoIcon} alt="KakaoIcon" style={{width: '100%', marginTop:'-5px'}}></img>
@@ -106,8 +107,8 @@ class Login extends React.Component {
                 <div style={{display:'flex', width:'350px', margin:'0 auto'}}><hr style={{width: '40%'}}/><span style={{margin:'0 10px', fontSize:'1.25rem'}}>또는</span><hr style={{width:'40%'}}/></div>
                 <div style={{textAlign:'center', margin:'20px auto', width:'300px', fontSize:'1.4rem'}}>
                     <p style={{lineHeight:'1.7'}}>이메일 주소로 로그인</p>
-                    <div>
-                        <TextField id="outlined-full-width" fullWidth margin="normal" InputLabelProps={{ shrink: true,}} variant="outlined" value={this.props.data} />
+                    <div className="loginform">
+                        <TextField id="outlined-full-width" fullWidth margin="normal" InputLabelProps={{ shrink: true,}} variant="outlined" value={this.props.data} style={{fontSize:'1.4rem'}} />
                         <InputAdornments/>
                         <p style={{textAlign:'left'}}><a href="#none">비밀번호를 잊으셨나요?</a></p>
                         <Button variant="contained" style={{ backgroundColor:'#228891', color:'#fff', fontSize:'12px', margin:'20px 0'}} onClick={this.props.login}>로그인</Button>
