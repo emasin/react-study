@@ -65,7 +65,8 @@ const QnaContainer = (props) => {
         dispatch(fetchQNAList());
     }, []);
 
-    const actionData = useSelector(state => state.qna.list, []) || [];
+    const listData = useSelector(state => state.qna.list, []) || [];
+
     const [show, setShow] = React.useState(false);
 
     const   handleShow = () => {
@@ -87,7 +88,7 @@ const QnaContainer = (props) => {
                 </div>
                 <ul className="qnalist" style={{paddingLeft:0}}>
 
-                    { actionData && actionData.map(detail => (
+                    { listData && listData.map(detail => (
                         <li style={{textAlign:'left', listStyle:'none',position:'relative', padding:'40px', marginBottom:'40px', border:'1px solid #d8dbe4', backgroundColor:'#fff'}}>
                             <Link to='/blossome/qnalist-detail' style={{textDecoration:'none'}}>
                                 <span style={{fontSize:'1.6rem', color:'#222'}}>{detail.createdDttime}</span>
