@@ -10,10 +10,11 @@ import Ssr from './component/ssr';
 import Login from './component/login';
 import Detail from "./component/Detail";
 import 'antd/dist/antd.css';
+import ActionContainer from "./hooks/ActionContainer";
 const {Header,Footer,Sider,Content} = Layout;
 function App() {
   return (
-    <div className="App">
+    <div className="">
         <Layout>
             <Header>
                 <Menu theme="dark" mode="horizontal" defaultSelectedKeys={['2']}>
@@ -27,6 +28,9 @@ function App() {
                         <Link to='/ssr'>SSR 테스트</Link>
                     </Menu.Item>
                     <Menu.Item key="4">
+                        <Link to='/movies'>영화</Link>
+                    </Menu.Item>
+                    <Menu.Item key="5">
                         <Link to='/login'>로그인</Link>
                     </Menu.Item>
                 </Menu>
@@ -37,6 +41,7 @@ function App() {
                     <Route path="/tutors" component={Tutor} />
                     <Route path="/courses" component={Contents} />
                     <Route path="/ssr" component={Ssr} />
+                    <Route path="/movies" component={ActionContainer} />
                     <Route path="/login" component={Login} />
                     <Route path="/detail/:name" component={Detail} />
                     <Route path="/react/detail/:name" component={Detail} />

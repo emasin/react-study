@@ -237,8 +237,8 @@ class Detail extends React.Component {
 const mapStateToProps = (state) => {
     console.log(state);
     return {
-        detailData: state.detailData,
-        loadContentDetail : state.loadContentDetail
+        detailData: state.topics.detailData || {},
+        loadContentDetail : state.topics.loadContentDetail
 
     };
 
