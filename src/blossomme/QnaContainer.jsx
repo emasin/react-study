@@ -69,10 +69,12 @@ const QnaContainer = (props) => {
     const [show, setShow] = React.useState(false);
 
     const   handleShow = () => {
+
         setShow(true);
     }
 
     const handleClose = () => {
+
         setShow(false);
     }
     return (
@@ -81,7 +83,7 @@ const QnaContainer = (props) => {
             <Container style={{marginTop:'100px', marginBottom:'120px'}}>
                 <h3 style={{fontSize:'3.4rem', textAlign:'left', paddingBottom:'80px', borderBottom:'2px solid #222'}}>Q&amp;A</h3>
                 <div style={{padding:'30px 0', display:'block', textAlign:'right'}}>
-                    <Button variant="outline-dark" onClick={handleShow} style={{fontSize:'1.6rem', lineHeight:'55px', width:'165px', border:'2px solid #222', fontWeight:'bold'}}>문의하기</Button>
+                    <Button variant="outline-dark" onClick={() => handleShow() } style={{fontSize:'1.6rem', lineHeight:'55px', width:'165px', border:'2px solid #222', fontWeight:'bold'}}>문의하기</Button>
                 </div>
                 <ul className="qnalist" style={{paddingLeft:0}}>
 
@@ -98,7 +100,7 @@ const QnaContainer = (props) => {
 
 
                 </ul>
-                <Modal className="modal" show={props.show} onHide={handleClose} animation={false}>
+                <Modal className="modal" show={show} onHide={handleClose} animation={false}>
                     <Modal.Header style={{display:'block', minHeight:'50px'}} closeButton/>
                     <Modal.Body style={{padding:'0 20px 35px', overflow:'auto'}}>
                         <div className="cont-box" style={{paddingBottom:'20px'}}>
