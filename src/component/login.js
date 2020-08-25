@@ -12,7 +12,7 @@ import {connect} from "react-redux";
 import * as actionCreators from "../actions/index.js"
 import Kakao from 'kakaojs';
 import { GoogleLogin } from 'react-google-login';
-import KakaoIcon from '../img/kakaoicon.jpg'; 
+import KakaoIcon from '../img/kakao.png'; 
 import '../css/login.css';
 
 function InputAdornments() {
