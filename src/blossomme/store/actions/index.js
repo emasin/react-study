@@ -1,6 +1,7 @@
 import axios from "axios";
 
 export const FETCH_QNA_LIST = 'FETCH_QNA_LIST';
+export const FETCH_QNA_ADD = 'FETCH_QNA_ADD';
 
 
 

@@ -25,14 +25,14 @@ class ContentContainer extends React.Component {
 }
 
 
-const mapStateToProps = (state) => {
+    const mapStateToProps = (state) => {
 
-    console.log(state);
-    return {
-        data: state.topics.data || []
+        console.log(state);
+        return {
+            data: state.topics.data || []
+        };
+
     };
-
-};
 
 
 const mapDispatchToProps = (dispatch) => {

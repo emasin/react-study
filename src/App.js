@@ -8,6 +8,7 @@ import Contents from './container/content-container.js';
 import Tutor from './container/tutor-container.js';
 import Ssr from './component/ssr';
 import Login from './component/login';
+import QnaAdmin from './blossomme/QnaAdminContainer';
 import Qna from './blossomme/QnaContainer';
 import Detail from "./component/Detail";
 
@@ -38,6 +39,9 @@ function App() {
                     <Menu.Item key="6">
                         <Link to='/blossome/qnalist'>Q&amp;A</Link>
                     </Menu.Item>
+                    <Menu.Item key="7">
+                        <Link to='/blossome/admin/qnalist'>관리자 Q&amp;A</Link>
+                    </Menu.Item>
                 </Menu>
             </Header>
             <Layout>
@@ -49,7 +53,7 @@ function App() {
                     <Route path="/movies" component={ActionContainer} />
                     <Route path="/login" component={Login} />
                     <Route path="/blossome/qnalist" component={Qna} />
-
+                    <Route path="/blossome/admin/qnalist" component={QnaAdmin} />
                     <Route path="/react/detail/:name" component={Detail} />
                 </Content>
             </Layout>

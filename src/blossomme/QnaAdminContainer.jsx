@@ -74,7 +74,7 @@ const QnaContainer = (props) => {
 
         <>
             <Container style={{marginTop:'100px', marginBottom:'120px'}}>
-                <h3 style={{fontSize:'3.4rem', textAlign:'left', paddingBottom:'80px', borderBottom:'2px solid #222'}}>Q&amp;A</h3>
+                <h3 style={{fontSize:'3.4rem', textAlign:'left', paddingBottom:'80px', borderBottom:'2px solid #222'}}>관리자 Q&amp;A</h3>
                 <div style={{padding:'30px 0', display:'block', textAlign:'right'}}>
                     <Button variant="outline-dark" onClick={() => loadData() } style={{fontSize:'1.6rem', lineHeight:'55px', width:'165px', border:'2px solid #222', fontWeight:'bold'}}>문의하기</Button>
                 </div>
