@@ -26,3 +26,22 @@ export const fetchQNAList = () => {
             });
     }
 }
+
+export const fetchQNAAdd = (data) => {
+    return (dispatch) => {
+        return axios.post(`${BASE_URL}/api/help/qna/add`, {
+                params: {
+                    mobilePhoneNo : data.mobilePhoneNo,
+                    userNm        : data.userNm,
+                    email         : data.email,
+                }
+            })
+            .then(res => {
+                console.log(res);
+                dispatch(fetchQNAList())
+            })
+            .catch(error => {
+                throw(error);
+            });
+    }
+}
