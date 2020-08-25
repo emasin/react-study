@@ -28,7 +28,7 @@ class TutorContainer extends React.Component {
 const mapStateToProps = (state) => {
 
     return {
-        data: state.tutor,
+        data: state.topics.tutor || [],
         loadTutor: state.loadTutor
     };
 
