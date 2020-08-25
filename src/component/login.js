@@ -12,6 +12,7 @@ import {connect} from "react-redux";
 import * as actionCreators from "../actions/index.js"
 import Kakao from 'kakaojs';
 import { GoogleLogin } from 'react-google-login';
+import KakaoIcon from '../img/kakaoicon.jpg'; 
 
 function InputAdornments() {
     const [values, setValues] = React.useState({
@@ -95,11 +96,11 @@ class Login extends React.Component {
                     >Google</GoogleLogin>
                     <Button onClick={kakaoLogin} variant="outlined" style={{borderColor:'rgb(236 236 236)', marginTop:'-5px', backgroundColor:'#fff', padding:0, marginLeft:'6px', fontSize:'1.4rem', textTransform:'none', boxShadow:'rgb(178 180 182) 0px 1.7px', color:'rgba(0, 0, 0, 0.54)'}}>
                       <div style={{padding:'10px', marginRight:'10px'}}>
-                        <span style={{ width:'18px', height:'18px', display:'block'}}>
-                          <img src="../img/kakaoicon.jpg" style={{width: '22px', marginTop:'-10px'}}></img>
+                        <span style={{ width:'21px', height:'21px', display:'block'}}>
+                          <img src={KakaoIcon} alt="KakaoIcon" style={{width: '100%', marginTop:'-5px'}}></img>
                         </span>
                       </div>
-                      <span style={{padding:'10px', lineHeight:'1.7'}}>kakao</span>
+                      <span style={{padding:'10px 10px 10px 0', lineHeight:'1.7'}}>kakao</span>
                       </Button>
                 </div>
                 <div style={{display:'flex', width:'350px', margin:'0 auto'}}><hr style={{width: '40%'}}/><span style={{margin:'0 10px', fontSize:'1.25rem'}}>또는</span><hr style={{width:'40%'}}/></div>
