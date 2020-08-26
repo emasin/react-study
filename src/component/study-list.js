@@ -4,7 +4,7 @@ import styles from "../css/style.module.css";
 import PlayCircleOutlineIcon from '@material-ui/icons/PlayCircleOutline';
 
 const title = {
-    fontSize:'3.4rem', textAlign:'left', paddingBottom:'80px', borderBottom:'2px solid #222'
+    fontSize:'3.4rem', textAlign:'left', paddingBottom:'30px', borderBottom:'2px solid #222'
 }
 
 const plays = {
@@ -15,7 +15,7 @@ class Studylist extends React.Component {
     render() {
         return (
             <>  
-                <Container style={{marginTop:'100px', marginBottom:'120px'}}>
+                <Container style={{marginTop:'50px', marginBottom:'60px'}}>
                     <h3 style={title}>Study list</h3>
                     <div className={styles.listbox}>
                         <a href="#none">
