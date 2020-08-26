@@ -55,6 +55,7 @@ const QnaContainer = (props) => {
     const [show, setShow] = useState(false);
 
     const [qnaInfo, setQnaInfo] = useState({
+        title: 'react고정제목',
         mobilePhoneNo : '',
         userNm : '',
         email : ''

@@ -28,14 +28,9 @@ export const fetchQNAList = () => {
 }
 
 export const fetchQNAAdd = (data) => {
+    const qs = require('qs');
     return (dispatch) => {
-        return axios.post(`${BASE_URL}/api/help/qna/add`, {
-                params: {
-                    mobilePhoneNo : data.mobilePhoneNo,
-                    userNm        : data.userNm,
-                    email         : data.email,
-                }
-            })
+        return axios.post(`${BASE_URL}/api/help/qna/add`, qs.stringify(data))
             .then(res => {
                 console.log(res);
                 dispatch(fetchQNAList())
