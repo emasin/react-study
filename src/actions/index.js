@@ -116,9 +116,37 @@ export  function login(){
     return(dispatch)=>{
         //local
         //return dispatch(loginAction(true));
+        const  access_token = localStorage.getItem("token");
+        debugger;
+        if(access_token)
+            return dispatch(getUserData(localStorage.getItem("token")));
 
-        return axios.get("https://us-central1-fbweb-31a5f.cloudfunctions.net/api/login").then((response)=>{
-            dispatch(loginAction(response.data.isLogin));
+        return axios.post("https://us-central1-fbweb-31a5f.cloudfunctions.net/api/login",{email:'devkids@kakao.com',password:'usr-9cfe92cd'},
+            {
+                headers: {
+                    'Content-Type': 'application/json',
+                }
+            }).then((response)=>{
+                localStorage.setItem("token",response.data.token);
+                dispatch(getUserData(response.data.token));
+        })
+
+    }
+}
+
+
+export  function getUserData(token){
+    return(dispatch)=>{
+        //local
+        //return dispatch(loginAction(true));
+
+        return axios.get("https://us-central1-fbweb-31a5f.cloudfunctions.net/api/check",
+            {
+                headers: {
+                    'x-access-token':token
+                }
+            }).then((response)=>{
+            dispatch(loginAction(response.data));
         })
 
     }
@@ -126,8 +154,29 @@ export  function login(){
 
 
 export function loginAction(data){
+    console.log(data);
     return{
         type:"LOGIN",
-        isLogin:data
+        user:data.info
+    }
+}
+export  function logout(){
+    debugger;
+    return(dispatch)=>{
+
+        localStorage.setItem("token","");
+        localStorage.removeItem("token");
+        return
+            dispatch(logoutAction());
+
+
+    }
+}
+
+
+export function logoutAction(){
+
+    return{
+        type:"LOGOUT"
     }
 }

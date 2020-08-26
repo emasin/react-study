@@ -11,6 +11,9 @@ import VisibilityOff from '@material-ui/icons/VisibilityOff';
 import {connect} from "react-redux";
 import * as actionCreators from "../actions/index.js"
 import Kakao from 'kakaojs';
+import { GoogleLogin } from 'react-google-login';
+import KakaoIcon from '../img/kakao.png'; 
+import '../css/login.css';
 
 function InputAdornments() {
     const [values, setValues] = React.useState({
@@ -55,45 +58,24 @@ function InputAdornments() {
     );
 }
 
+function kakaoLogin() {
+    Kakao.Auth.loginForm({
+        success: (res) => {
+            console.log(res);
+            Kakao.API.request({
+                url : '/v2/user/me',
+                success : function(res) {
+                    console.log(res);
+                }
+            });
+        },
+        fail: (res) => {
+            console.log(res);
+        }
+    });
+}
 
-class Login extends React.Component {
-
-
-
-    constructor(props) {
-        super(props);
-        this.kakaoLoginPop = this.kakaoLoginPop.bind(this);
-        this.klogin = this.kakaoLogin.bind(this);
-    }
-
-    kakaoLoginPop = (e)=> {
-        //var  klogin = kakaoLogin.bind(this);
-        Kakao.Auth.loginForm({
-            success: (res) => {
-                this.klogin(this.props);
-
-            },
-            fail: (res) => {
-                console.log(res);
-            }
-        });
-    }
-
-    kakaoLogin = (props)=> {
-        Kakao.API.request({
-            url : '/v2/user/me',
-            success : function(res) {
-                console.log(props);
-                props.login();
-                //console.log(res);
-
-
-
-            }
-        });
-    }
-
-
+class LoginPage extends React.Component {
     render() {
         const {data} = this.props;
         return (
@@ -104,14 +86,29 @@ class Login extends React.Component {
                     <p style={{lineHeight:'1.7', fontSize:'1.4rem'}}>로그인 방법</p>
                 </div>
                 <div style={{margin:'10px auto', textAlign:'center'}}>
-                    <Button variant="outlined" style={{margin:'6px', fontSize:'1.25rem', lineHeight:'1.8', textTransform:'none'}}>Google</Button>
-                    <Button onClick={this.kakaoLoginPop} variant="outlined" style={{margin:'6px', fontSize:'1.25rem', lineHeight:'1.8', textTransform:'none'}}>kakao</Button>
+                    <GoogleLogin style={{ fontSize:'1.25rem', lineHeight:'1.8', textTransform:'none'}}
+                        clientId="294069593193-et3t9jjuvs8ciitoam8hfmivv8cb34ji.apps.googleusercontent.com"    
+                        onSuccess={(res)=>{
+                            console.log(res);
+                        }}
+                        onFailure={(err)=>{
+                            console.log(err);
+                        }}
+                    >Google</GoogleLogin>
+                    <Button onClick={kakaoLogin} variant="outlined" style={{borderColor:'rgb(236 236 236)', marginTop:'-6px', backgroundColor:'#fff', padding:0, marginLeft:'6px', fontSize:'1.4rem', textTransform:'none', boxShadow:'rgb(178 180 182) 0px 1.7px', color:'rgba(0, 0, 0, 0.54)'}}>
+                      <div style={{padding:'10px', marginRight:'10px'}}>
+                        <span style={{ width:'21px', height:'21px', display:'block'}}>
+                          <img src={KakaoIcon} alt="KakaoIcon" style={{width: '100%', marginTop:'-5px'}}></img>
+                        </span>
+                      </div>
+                      <span style={{padding:'10px 10px 10px 0', lineHeight:'1.7'}}>kakao</span>
+                      </Button>
                 </div>
-                <div style={{display:'flex', width:'350px', margin:'0 auto'}}><hr style={{width: '40%'}}/><span style={{margin:'0 10px', fontSize:'1.25rem'}}>또는</span><hr style={{width: '40%'}}/></div>
+                <div style={{display:'flex', width:'350px', margin:'0 auto'}}><hr style={{width: '40%'}}/><span style={{margin:'0 10px', fontSize:'1.25rem'}}>또는</span><hr style={{width:'40%'}}/></div>
                 <div style={{textAlign:'center', margin:'20px auto', width:'300px', fontSize:'1.4rem'}}>
                     <p style={{lineHeight:'1.7'}}>이메일 주소로 로그인</p>
-                    <div>
-                        <TextField id="outlined-full-width" fullWidth margin="normal" InputLabelProps={{ shrink: true,}} variant="outlined" value={this.props.data} />
+                    <div className="loginform">
+                        <TextField id="outlined-full-width" fullWidth margin="normal" InputLabelProps={{ shrink: true,}} variant="outlined" value={this.props.data} style={{fontSize:'1.4rem'}} />
                         <InputAdornments/>
                         <p style={{textAlign:'left'}}><a href="#none">비밀번호를 잊으셨나요?</a></p>
                         <Button variant="contained" style={{ backgroundColor:'#228891', color:'#fff', fontSize:'12px', margin:'20px 0'}} onClick={this.props.login}>로그인</Button>
@@ -135,4 +132,4 @@ const s = (state) => {
 
 
 
-export default connect(s,actionCreators) (Login);
+export default connect(s,actionCreators) (LoginPage);

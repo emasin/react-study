@@ -31,10 +31,17 @@ export default function (state = [], action) {
                 data:action.topic
         }
     }else if(action.type==="LOGIN"){
+        console.log(action.user);
         return{
             ...state,
 
-                isLogin:action.isLogin
+                user:action.user
+        }
+    }else if(action.type==="LOGOUT"){
+        debugger;
+        return{
+            ...state,
+            user:{}
         }
     }else if(action.type==="LOAD_StudyList"){
         return{
