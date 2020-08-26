@@ -11,6 +11,7 @@ import Login from './component/login';
 import QnaAdmin from './blossomme/QnaAdminContainer';
 import Qna from './blossomme/QnaContainer';
 import Detail from "./component/Detail";
+import Studylist from "./component/study-list";
 
 import 'antd/dist/antd.css';
 import ActionContainer from "./hooks/ActionContainer";
@@ -42,6 +43,9 @@ function App() {
                     <Menu.Item key="7">
                         <Link to='/blossome/admin/qnalist'>관리자 Q&amp;A</Link>
                     </Menu.Item>
+                    <Menu.Item key="8">
+                        <Link to='/blossome/studylist'>Study List</Link>
+                    </Menu.Item>
                 </Menu>
             </Header>
             <Layout>
@@ -52,6 +56,7 @@ function App() {
                     <Route path="/ssr" component={Ssr} />
                     <Route path="/movies" component={ActionContainer} />
                     <Route path="/login" component={Login} />
+                    <Route path="/blossome/studylist" component={Studylist} />
                     <Route path="/blossome/qnalist" component={Qna} />
                     <Route path="/blossome/admin/qnalist" component={QnaAdmin} />
                     <Route path="/react/detail/:name" component={Detail} />
