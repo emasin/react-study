@@ -36,7 +36,14 @@ export default function (state = [], action) {
 
                 isLogin:action.isLogin
         }
-    }else{
+    }else if(action.type==="LOAD_StudyList"){
+        return{
+            ...state,
+
+                history:action.history
+        }
+    }
+    else{
         return{
             ...state
         }

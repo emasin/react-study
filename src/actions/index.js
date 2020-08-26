@@ -93,6 +93,23 @@ export function loadTopic1Action(data){
     }
 }
 
+export  function loadStudyList(){
+    return(dispatch)=>{
+        //local
+        return axios.get("https://us-central1-fbweb-31a5f.cloudfunctions.net/api/my/history").then((response)=>{
+            dispatch(loadStudyListAction(response.data));
+        })
+    }
+}
+
+
+export function loadStudyListAction(data){
+    return{
+        type:"LOAD_StudyList",
+        history:data
+    }
+}
+
 
 
 export  function login(){
