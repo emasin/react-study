@@ -17,20 +17,30 @@ class Studylist extends React.Component {
             <>  
                 <Container style={{marginTop:'100px', marginBottom:'120px'}}>
                     <h3 style={title}>Study list</h3>
-                    <ul className={styles.listbox}>
-                        <li>
-                            <a href="#none">
-                                <div>
-                                    <img src="https://img.youtube.com/vi/sZDvByH2mNU/0.jpg"></img>
-                                    <PlayCircleOutlineIcon style={plays}/>
-                                </div>
-                                <div>
-                                    <span>2020-08-10 12:05:29</span>
-                                    <p>React Hooks for daily use!</p>
-                                </div>
-                            </a>
-                        </li>
-                    </ul>
+                    <div className={styles.listbox}>
+                        <a href="#none">
+                            <div>
+                                <img src="https://img.youtube.com/vi/sZDvByH2mNU/0.jpg"></img>
+                                <PlayCircleOutlineIcon style={plays}/>
+                            </div>
+                            <div>
+                                <span>2020-08-10 12:05:29</span>
+                                <p>React Hooks for daily use!</p>
+                            </div>
+                        </a>
+                    </div>
+                    <div className={styles.listbox}>
+                        <a href="#none">
+                            <div>
+                                <img src="https://img.youtube.com/vi/sZDvByH2mNU/0.jpg"></img>
+                                <PlayCircleOutlineIcon style={plays}/>
+                            </div>
+                            <div>
+                                <span>2020-08-10 12:05:29</span>
+                                <p>React Hooks for daily use!</p>
+                            </div>
+                        </a>
+                    </div>
                 </Container>
             </>
         )
