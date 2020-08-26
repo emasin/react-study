@@ -1,15 +1,9 @@
-.listbox {
-    background-color:#fff;
-    padding:20px;
-    margin:20px 0;
-    border:1px solid #ccc;
-    text-align:left;
-    list-style-type: none;
-}
+.title{font-size:3.4rem; text-align:left; padding-bottom:30px; border-bottom:2px solid #222;}
+.listbox {background-color:#fff; padding:20px; margin:25px 0; border:1px solid #ccc; text-align:left; list-style-type: none;}
 .listbox span{font-size:1.6rem; color:#222;}
 .listbox p{font-size:2rem; line-height:25px; margin-top:10px; word-break:break-all; margin-right:40px; font-weight: bold;}
 .listbox a{color:#222; display: flex;}
 .listbox a:hover{text-decoration:none; color:#222;}
-.listbox a div:first-child{margin-right:20px; max-width: 150px; flex: 0 0 50%; position: relative;}
+.listbox a div:first-child{height: 120px; margin-right:20px; max-width: 150px; flex: 0 0 50%; position: relative;}
 .listbox a div:last-child{flex: 0 0 50%;}
-.listbox a div img{width:100%}
+.listbox a div img{width:100%; height: 100%;}

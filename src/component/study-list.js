@@ -1,14 +1,15 @@
 import React from "react";
 import { Container } from "@material-ui/core";
 import styles from "../css/style.module.css";
+import LaunchIcon from '@material-ui/icons/Launch';
 import PlayCircleOutlineIcon from '@material-ui/icons/PlayCircleOutline';
 
-const title = {
-    fontSize:'3.4rem', textAlign:'left', paddingBottom:'30px', borderBottom:'2px solid #222'
+const launch = {
+    fontSize:50, position:'absolute', left:'50%', top:'50%', transform: `translate(-50%, -50%)`
 }
 
 const plays = {
-    fontSize:50, color:'#fff', position:'absolute', left:'50%', top:'30px', transform: `translateX(-50%)`
+    fontSize:50, color:'#fff', position:'absolute', left:'50%', top:'50%', transform: `translate(-50%, -50%)`
 }
 
 class Studylist extends React.Component {
@@ -16,12 +17,11 @@ class Studylist extends React.Component {
         return (
             <>  
                 <Container style={{marginTop:'50px', marginBottom:'60px'}}>
-                    <h3 style={title}>Study list</h3>
+                    <h3 className={styles.title}>Study list</h3>
                     <div className={styles.listbox}>
                         <a href="#none">
-                            <div>
-                                <img src="https://img.youtube.com/vi/sZDvByH2mNU/0.jpg"></img>
-                                <PlayCircleOutlineIcon style={plays}/>
+                            <div style={{backgroundColor:'#ccc'}}>
+                                <LaunchIcon style={launch}/>
                             </div>
                             <div>
                                 <span>2020-08-10 12:05:29</span>
@@ -31,8 +31,8 @@ class Studylist extends React.Component {
                     </div>
                     <div className={styles.listbox}>
                         <a href="#none">
-                            <div>
-                                <img src="https://img.youtube.com/vi/sZDvByH2mNU/0.jpg"></img>
+                            <div style={{backgroundColor:'#ccc'}}>
+                                <img src="https://img.youtube.com/vi/sZDvByH2mNU/0.jpg" style={launch}></img>
                                 <PlayCircleOutlineIcon style={plays}/>
                             </div>
                             <div>
