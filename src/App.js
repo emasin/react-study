@@ -9,7 +9,6 @@ import Tutor from './container/tutor-container.js';
 import Ssr from './component/ssr';
 import Login from './component/login';
 import Detail from "./component/Detail";
-import Admin from "./admin/admin";
 import 'antd/dist/antd.css';
 const {Header,Footer,Sider,Content} = Layout;
 function App() {
@@ -30,9 +29,6 @@ function App() {
                     <Menu.Item key="4">
                         <Link to='/login'>로그인</Link>
                     </Menu.Item>
-                    <Menu.Item key="5">
-                        <Link to='/admin'>관리자</Link>
-                    </Menu.Item>
                 </Menu>
             </Header>
             <Layout>
@@ -44,7 +40,6 @@ function App() {
                     <Route path="/login" component={Login} />
                     <Route path="/detail/:name" component={Detail} />
                     <Route path="/react/detail/:name" component={Detail} />
-                    <Route path="/admin" component={Admin} />
                 </Content>
             </Layout>
         </Layout>

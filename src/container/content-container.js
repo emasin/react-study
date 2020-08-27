@@ -14,6 +14,7 @@ class ContentContainer extends React.Component {
 
     render() {
         const {data} = this.props;
+        console.log(data);
         return (
             <>
                 <List data={data}></List>
@@ -24,13 +25,14 @@ class ContentContainer extends React.Component {
 }
 
 
-const mapStateToProps = (state) => {
+    const mapStateToProps = (state) => {
 
-    return {
-        data: state.topic1
+        console.log(state);
+        return {
+            data: state.topics.data || []
+        };
+
     };
-
-};
 
 
 const mapDispatchToProps = (dispatch) => {

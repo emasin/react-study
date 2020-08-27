@@ -5,7 +5,7 @@ class ListItem extends React.Component {
 
     render() {
         const data = this.props.data;
-        const link  = '/detail/' + this.props.index;
+        const link  = '/react/detail/' + this.props.index;
 
         return (
 
