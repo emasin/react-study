@@ -13,7 +13,7 @@ import QnaAdmin from './blossomme/QnaAdminContainer';
 import Qna from './blossomme/QnaContainer';
 import Detail from "./component/Detail";
 import Studylist from "./component/study-list";
-import Admin from "./admin/admin"
+import Admin from "./blossomme/admin/admin"
 import 'antd/dist/antd.css';
 import ActionContainer from "./hooks/ActionContainer";
 import {CardContent} from "@material-ui/core";
@@ -41,7 +41,7 @@ function App() {
                             <Link to='/blossome/qnalist'>Q&amp;A</Link>
                         </Menu.Item>
                         <Menu.Item key="7">
-                            <Link to='/blossome/admin/qnalist'>관리자 Q&amp;A</Link>
+                            <Link to='/admin'>관리자 Q&amp;A</Link>
                         </Menu.Item>
                         <Menu.Item key="8">
                             <Link to='/studylist'>Study List</Link>
@@ -49,9 +49,6 @@ function App() {
 
                         <Menu.Item key="9">
                             <Link to='/profile'>Profile</Link>
-                        </Menu.Item>
-                        <Menu.Item key="10">
-                            <Link to='/admin'>Admin</Link>
                         </Menu.Item>
                     </Menu>
 
@@ -66,10 +63,9 @@ function App() {
                         <Route path="/login" component={LoginPage} />
                         <Route path="/studylist" component={Studylist} />
                         <Route path="/blossome/qnalist" component={Qna} />
-                        <Route path="/blossome/admin/qnalist" component={QnaAdmin} />
+                        <Route path="/admin" component={Admin} />
                         <Route path="/react/detail/:name" component={Detail} />
                         <Route path="/profile" component={Profile} />
-                        <Route path="/admin" component={Admin} />
                     </Content>
                 </Layout>
             </Layout>
