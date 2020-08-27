@@ -4,14 +4,15 @@ import {Link, Route } from 'react-router-dom';
 import * as actionCreators from "../actions/index.js"
 import Button from "@material-ui/core/Button";
 
-const Login = (props) => {
+const Login = ({history}) => {
     const _user = useSelector(state => state.topics.user, []) || {};
     const dispatch = useDispatch();
     const logout = (e) => {
-        alert(1)
+        console.log(history);
         dispatch(actionCreators.logout());
+
     }
-    console.log(_user);
+
     return (
         <>
             <div className="movie">

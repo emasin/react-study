@@ -1,4 +1,5 @@
 import React from "react";
+import { Redirect } from "react-router-dom"
 import Button from "@material-ui/core/Button";
 import TextField from '@material-ui/core/TextField';
 import IconButton from '@material-ui/core/IconButton';
@@ -76,8 +77,30 @@ function kakaoLogin() {
 }
 
 class LoginPage extends React.Component {
+
+    constructor(props) {
+        super(props);
+        this.state = {email: ''};
+    }
+
+      login=()=>{
+
+
+
+        this.props.fetchLogin(this.state.email);
+
+    }
+
+    onChangeEmail=(e)=>{
+            this.setState({email:e.target.value})
+    }
+
     render() {
-        const {data} = this.props;
+        const {user} = this.props;
+
+        const { from } =   { from:{pathname: "/studylist" }}
+        if (user) return <Redirect to={from} />
+
         return (
             <>
                 <div style={{textAlign:'center', margin:'20px auto', width:'300px'}}>
@@ -108,10 +131,10 @@ class LoginPage extends React.Component {
                 <div style={{textAlign:'center', margin:'20px auto', width:'300px', fontSize:'1.4rem'}}>
                     <p style={{lineHeight:'1.7'}}>이메일 주소로 로그인</p>
                     <div className="loginform">
-                        <TextField id="outlined-full-width" fullWidth margin="normal" InputLabelProps={{ shrink: true,}} variant="outlined" value={this.props.data} style={{fontSize:'1.4rem'}} />
+                        <TextField id="outlined-full-width" fullWidth margin="normal" InputLabelProps={{ shrink: true,}} variant="outlined"  onChange={this.onChangeEmail} style={{fontSize:'1.4rem'}} />
                         <InputAdornments/>
                         <p style={{textAlign:'left'}}><a href="#none">비밀번호를 잊으셨나요?</a></p>
-                        <Button variant="contained" style={{ backgroundColor:'#228891', color:'#fff', fontSize:'12px', margin:'20px 0'}} onClick={this.props.login}>로그인</Button>
+                        <Button variant="contained" style={{ backgroundColor:'#228891', color:'#fff', fontSize:'12px', margin:'20px 0'}} onClick={this.login}>로그인</Button>
                         <p style={{textAlign:'left'}}>Cambly에 처음이신가요? <span><a href="#none">회원가입</a></span></p>
                     </div>
                 </div>
@@ -124,7 +147,7 @@ class LoginPage extends React.Component {
 const s = (state) => {
 
     return {
-        data: state.isLogin,
+        user: state.topics.user,
 
     };
 

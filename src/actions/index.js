@@ -112,7 +112,7 @@ export function loadStudyListAction(data){
 
 
 
-export  function login(){
+export  function fetchLogin(email){
     return(dispatch)=>{
         //local
         //return dispatch(loginAction(true));
@@ -121,7 +121,7 @@ export  function login(){
         if(access_token)
             return dispatch(getUserData(localStorage.getItem("token")));
 
-        return axios.post("https://us-central1-fbweb-31a5f.cloudfunctions.net/api/login",{email:'devkids@kakao.com',password:'usr-9cfe92cd'},
+        return axios.post("https://us-central1-fbweb-31a5f.cloudfunctions.net/api/login",{email:email,password:'usr-9cfe92cd'},
             {
                 headers: {
                     'Content-Type': 'application/json',
