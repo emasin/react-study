@@ -10,9 +10,9 @@ function Profile({ user } ) {
 
     const { email, password, name } = user || {}
 
-    const { from } =   { from:{pathname: "/login" }}
-    
-    if (!_user.username) return <Redirect to={from} />
+
+    if(!_user.username)
+        return (<Redirect to={'/login'} />);
 
     return (
         <>

@@ -6,6 +6,7 @@ import PlayCircleOutlineIcon from '@material-ui/icons/PlayCircleOutline';
 import { useDispatch, useSelector } from "react-redux";
 import * as actionIndex from "../actions/index";
 import GitHubIcon from '@material-ui/icons/GitHub';
+import {Redirect } from 'react-router-dom';
 
 const launch = {
     fontSize:50, position:'absolute', left:'50%', top:'50%', transform: `translate(-50%, -50%)`
@@ -19,11 +20,21 @@ const Studylist = () => {
     const dispatch = useDispatch();
     
     useEffect(() => {
+        console.log('here...');
         dispatch(actionIndex.loadStudyList());
     }, [])
 
-    const studylist = useSelector(state => state.topics.history, []) || [];
+    const topics = useSelector(state => state.topics, []) || {};
+    console.log(topics);
+    const studylist  =topics.history || [];
+    const {username} = topics.user|| '';
+    console.log(username);
+   // const user = useSelector(state => state.topics.user, []) || [];
+    //{}
+    //{_id:'devkids@kakao.co'}
 
+    if( !username )
+        return (<Redirect to={'/login'} />);
     return (
         <>  
             <Container style={{marginTop:'50px', marginBottom:'60px'}}>

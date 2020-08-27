@@ -80,14 +80,11 @@ class LoginPage extends React.Component {
 
     constructor(props) {
         super(props);
-        this.state = {email: ''};
+        this.state = {email: '',password:''};
     }
 
       login=()=>{
-
-
-
-        this.props.fetchLogin(this.state.email);
+        this.props.fetchLogin(this.state.email,this.state.password);
 
     }
 
@@ -96,11 +93,11 @@ class LoginPage extends React.Component {
     }
 
     render() {
-        const {user} = this.props;
-
-        const { from } =   { from:{pathname: "/studylist" }}
-        if (user) return <Redirect to={from} />
-
+        const {topics} = this.props;
+        const {username } = topics.user || '';
+        console.log(username);
+        if(username !== '' && username !== undefined)
+            return (<Redirect to={'/studylist'}></Redirect>)
         return (
             <>
                 <div style={{textAlign:'center', margin:'20px auto', width:'300px'}}>
@@ -132,7 +129,7 @@ class LoginPage extends React.Component {
                     <p style={{lineHeight:'1.7'}}>이메일 주소로 로그인</p>
                     <div className="loginform">
                         <TextField id="outlined-full-width" fullWidth margin="normal" InputLabelProps={{ shrink: true,}} variant="outlined"  onChange={this.onChangeEmail} style={{fontSize:'1.4rem'}} />
-                        <InputAdornments/>
+                        <InputAdornments />
                         <p style={{textAlign:'left'}}><a href="#none">비밀번호를 잊으셨나요?</a></p>
                         <Button variant="contained" style={{ backgroundColor:'#228891', color:'#fff', fontSize:'12px', margin:'20px 0'}} onClick={this.login}>로그인</Button>
                         <p style={{textAlign:'left'}}>Cambly에 처음이신가요? <span><a href="#none">회원가입</a></span></p>
@@ -147,9 +144,11 @@ class LoginPage extends React.Component {
 const s = (state) => {
 
     return {
-        user: state.topics.user,
+        topics: state.topics,
 
     };
+
+    //this.props.user = user;
 
 };
 

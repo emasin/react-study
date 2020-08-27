@@ -38,7 +38,7 @@ export default function (state = [], action) {
                 user:action.user
         }
     }else if(action.type==="LOGOUT"){
-        debugger;
+
         return{
             ...state,
             user:{}

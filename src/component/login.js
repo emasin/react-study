@@ -4,11 +4,11 @@ import {Link, Route } from 'react-router-dom';
 import * as actionCreators from "../actions/index.js"
 import Button from "@material-ui/core/Button";
 
-const Login = ({history}) => {
+const Login = ( ) => {
     const _user = useSelector(state => state.topics.user, []) || {};
     const dispatch = useDispatch();
     const logout = (e) => {
-        console.log(history);
+
         dispatch(actionCreators.logout());
 
     }

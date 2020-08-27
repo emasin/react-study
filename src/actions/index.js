@@ -112,12 +112,12 @@ export function loadStudyListAction(data){
 
 
 
-export  function fetchLogin(email){
+export  function fetchLogin(email,password){
     return(dispatch)=>{
         //local
         //return dispatch(loginAction(true));
         const  access_token = localStorage.getItem("token");
-        debugger;
+
         if(access_token)
             return dispatch(getUserData(localStorage.getItem("token")));
 
@@ -161,13 +161,12 @@ export function loginAction(data){
     }
 }
 export  function logout(){
-    debugger;
+
     return(dispatch)=>{
 
         localStorage.setItem("token","");
         localStorage.removeItem("token");
-        return
-            dispatch(logoutAction());
+        dispatch(logoutAction());
 
 
     }
