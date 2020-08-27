@@ -5,13 +5,14 @@ import LaunchIcon from '@material-ui/icons/Launch';
 import PlayCircleOutlineIcon from '@material-ui/icons/PlayCircleOutline';
 import { useDispatch, useSelector } from "react-redux";
 import * as actionIndex from "../actions/index";
+import GitHubIcon from '@material-ui/icons/GitHub';
 
 const launch = {
     fontSize:50, position:'absolute', left:'50%', top:'50%', transform: `translate(-50%, -50%)`
 }
 
 const plays = {
-    fontSize:50, color:'#fff', position:'absolute', left:'50%', top:'50%', transform: `translate(-50%, -50%)`
+    fontSize:50, position:'absolute', left:'50%', top:'50%', transform: `translate(-50%, -50%)`, color:'#fff'
 }
 
 const Studylist = () => {
@@ -69,6 +70,29 @@ const Studylist = () => {
                         </div>
                     </a>
                 </div> */}
+                <div className={styles.listbox}>
+                    <a href="#none">
+                        <div style={{backgroundColor:'#ccc'}}>
+                            <GitHubIcon  style={launch}/>
+                        </div>
+                        <div>
+                            <span>2020-08-10 12:05:29</span>
+                            <p>React Hooks for daily use!</p>
+                        </div>
+                    </a>
+                </div>
+                <div className={styles.listbox}>
+                    <a href="#none">
+                        <div style={{backgroundColor:'#ccc'}}>
+                            {/*<img src="https://img.youtube.com/vi/sZDvByH2mNU/0.jpg" style={launch}></img>*/}
+                            <PlayCircleOutlineIcon style={launch}/>
+                        </div>
+                        <div>
+                            <span>2020-08-10 12:05:29</span>
+                            <p>React Hooks for daily use!</p>
+                        </div>
+                    </a>
+                </div>
             </Container>
         </>
     )
